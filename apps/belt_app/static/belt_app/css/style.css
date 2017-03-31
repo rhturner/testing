@@ -1,0 +1,182 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+input[type=submit] {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#nav_elements {
+  width: 70%;
+  display: inline-block;
+  text-align: right;
+}
+
+#nav_elements li {
+  display: inline-block;
+  list-style-type: none;
+  padding-right: 20px;
+  padding-left:20px;
+  color: white;
+  font-family: 'Cabin', sans-serif;
+  border-right-color: white;
+  border-right-style: solid;
+  border-right-width: 1px;
+  line-height: 30px;
+
+}
+
+#nav_elements li:active {
+  background-color: gray;
+}
+
+.open_sans {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.cabin {
+font-family: 'Cabin', sans-serif;
+}
+
+.error {
+  background-color: #c5d2e8;
+}
+
+.error p {
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.error p:last-child {
+  padding-bottom: 10px;
+}
+
+.logo {
+  width: 75px;
+  position: absolute;
+  left: 10px;
+  top: 13px;
+}
+.navbar {
+  width: 100%;
+  height: 50px;
+  background: linear-gradient(#4f5866,#3565b2);
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #3d4147;
+  margin-bottom: 10px;
+}
+
+.app_title {
+  font-family: 'Cabin', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+  line-height: 50px;
+  margin-left: 100px;
+}
+
+.bold {
+  text-emphasis: bolder;
+}
+
+
+.no_decoration {
+  text-decoration: none;
+  color: white;
+}
+
+.mybutton {
+font-family: 'Cabin', sans-serif;
+font-size: 16px;
+  display: inline-block;
+  background: #396ead;
+  padding-top: 5px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  border-radius: 4px;
+  box-shadow: 3px 3px #6c747c;
+  color: white;
+  margin: 5px;
+  text-decoration: none;
+}
+
+textarea:focus, input:focus {
+	border: 2px solid #900;
+}
+
+table {
+    border-collapse: collapse;
+    width: 90%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #3565b2;
+    color: white;
+}
+/*END CORE CSS*/
+
+.message_box {
+  background: #cdd2d8;
+  width: 700px;
+  height: 200px;
+  margin-left: 100px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.message_box_button {
+  margin-left: 550px;
+  margin-top: 100px;
+}
+
+.message_box_lower {
+  height: 150px;
+  width: 225px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.lower_messages {
+  padding-left: 100px;
+  padding-top: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.black  {
+    color: black;
+}
+
+.user_message {
+  width: 400px;
+}
+
+.comment_to_message {
+  width: 400px;
+  margin-left: 50px;
+}
+.align_right {
+  text-align: right;
+}
+
+.comment_margin {
+  margin: 10px;
+}
+
+.message_margin {
+  margin: 10px;
+}

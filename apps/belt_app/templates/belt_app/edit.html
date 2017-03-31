@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Open+Sans" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'belt_app/css/style.css' %}">
+
+  </head>
+  <body>
+    <div class="navbar">
+        <img class="logo" src="{% static 'belt_app/img/cdlogo.png'%}" alt="">
+        <p class="app_title">Dashboard: </p>
+      <div id="nav_elements">
+          <li><a class="no_decoration" href="/">Home</a></li>
+          <li><a class="no_decoration" href="/logout">Logout</a></li>
+      </div>
+    </div>
+
+    <!-- COPY ABOVE FOR HEADER -->
+    <div class="error">
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+    <div class="lower_messages">
+        <h3>Edit Your Profile</h3>
+        <form class="" action="/update/{{ appointment.id }}" method="post">
+          {% csrf_token %}
+          <p>Task:</p>
+          <input type="text" name="task" value="{{ appointment.task }}"><br>
+          <p>Date:</p>
+          <input type="text" name="date" value="{{ appointment.date|date:"Y-m-d"}}"><br>
+          <p>Time: (24 Hour Format)</p>
+          <input type="text" name="time" value="{{ appointment.time }}"><br>
+          <p>Status:</p>
+          <select class="" name="status">
+              <option value="Pending">Pending</option>
+              <option value="Done">Done</option>
+              <option value="Missed">Missed</option>
+          </select><br>
+          <input type="submit" name="" value="Update my Appointment">
+        </form>
+      </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <link href="https://fonts.googleapis.com/css?family=Cabin|Open+Sans" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="{%static 'belt_app/css/style.css' %}">
+
+  </head>
+  <body>
+    <div class="navbar">
+        <img class="logo" src="{% static 'belt_app/img/cdlogo.png'%}" alt="">
+        <p class="app_title">Dashboard: {{ request.session.name }}</p>
+      <div id="nav_elements">
+          <li><a class="no_decoration" href="/">Home</a></li>
+          <li><a class="no_decoration" href="/logout">Logout</a></li>
+      </div>
+    </div>
+    <!-- COPY ABOVE FOR HEADER -->
+    <div class="error">
+      {% for message in messages %}
+      <p>{{ message }}</p>
+      {% endfor %}
+    </div>
+    <form class="" action="/create" method="post">
+        {% csrf_token %}
+        <h2>Add Appointment</h2>
+        <p>Date: YYYY-MM-DD</p>
+        <input type="text" name="date" value=""><br>
+        <p>Time: HH:MM (24 hour format)</p>
+        <input type="text" name="time" value=""><br>
+        <p>Task:</p>
+        <input type="text" name="task" value=""><br>
+        <input class="mybutton" type="submit" name="" value="Add">
+    </form>
+
+    <h2>Events for {{ date }}:</h2>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        {% for event in today %}
+        <tr>
+            <td>{{ event.task }}</td>
+            <td>{{event.time}}</td>
+            <td>{{event.status}}</td>
+            <td><a class="mybutton" href="/delete/{{event.id}}">Delete</a> <a class="mybutton "href="/edit/{{event.id}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+<h2>All other events:</h2>
+    <table>
+        <tr>
+            <th>Task</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Actions</th>
+        </tr>
+        {% for event in everything %}
+        <tr>
+            <td>{{ event.task }}</td>
+            <td>{{ event.date }}</td>
+            <td>{{event.time}}</td>
+            <td><a class="mybutton" href="/delete/{{event.id}}">Delete</a> <a class="mybutton "href="/edit/{{event.id}}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+    <body>
+</html>
